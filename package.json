@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "babel": "babel --presets es2015 build.js -o server.js",
+    "babel": "babel --presets es2015 build/serverBuild.js -o server.js",
     "start": "node server",
     "dev": "nodemon server"
   },
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
-    "lodash": "^4.2.1"
+    "lodash": "^4.2.1",
+    "morgan": "^1.6.1"
   }
 }

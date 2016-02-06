@@ -1,0 +1,22 @@
+{
+  "name": "express-yet-again",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/andela-mfalade/express-yet-again",
+  "authors": [
+    "andela-mfalade <mayowa.falade@andela.co>"
+  ],
+  "description": "Simple app to download youtube audio files from a video url",
+  "keywords": [
+    "youtube",
+    "video"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/bower_components",
+    "test",
+    "tests"
+  ]
+}
