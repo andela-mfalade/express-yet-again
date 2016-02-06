@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "babel": "babel --presets es2015 build.js -o server.js",
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "keywords": [],
   "author": "Falade Ayodeji Mayowa",
