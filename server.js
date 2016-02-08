@@ -9,12 +9,21 @@ var express = require('express'),
     port = 8080,
     base = __dirname + '/public';
 
+app.set('views', './views');
+app.set('view engine', 'jade');
+
 app.use(cors());
 app.use(express.static(base));
 app.use(morgan('dev'));
 
 app.get('/', function (req, res) {
     res.sendFile('index.html', { root: base });
+});
+
+app.get('/admin', function (req, res) {
+    res.render('index', {
+        superAdmin: { 'email': 'admin@app.com', 'password': 'admin' }
+    });
 });
 
 app.get('/getAudioFile/:url', function (req, res) {
