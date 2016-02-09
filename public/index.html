@@ -17,7 +17,7 @@
         <section id="sidebar">
 			<div class="inner">
                 <div id="logo">
-                    <img src="assets/images/mp3logo1.png" alt="mp3 logo" />
+                    <a href="/"><img src="assets/images/mp3logo1.png" alt="mp3 logo" /></a>
                 </div>
 				<nav>
 					<ul>
@@ -38,10 +38,26 @@
                     <p>
                         Quick Easy download.
                     </p>
-                    <form ng-submit="convertUrl()">
-                        <input type="text" placeholder="Enter video url here." class="scrolly" ng-model="youtubeUrl"/><br  />
-                        <input type="button" ng-click="convertUrl()" value="CONVERT VIDEO"/>
-                    </form>
+                    <div ng-show="downloadReady == false">
+                        <form ng-submit="convertUrl()">
+                            <input type="text" placeholder="Enter video url here." class="scrolly" ng-model="youtubeUrl"/><br  />
+                            <input type="button" ng-click="convertUrl()" value="CONVERT VIDEO"/><br />
+                        </form>
+                    </div>
+
+                    <div class="downloadSection" ng-if="downloadReady">
+                        <a href="/download/start/test" target="_self">Download Video</a>
+                    </div>
+
+                    <div class="downloadSection" ng-if="obseneUrl">
+                        <h3 class="error">{{ feedback }}</h3>
+                        <p>Please visit other sites for this.</p>
+                    </div>
+
+                    <div class="downloadSection" ng-if="notFound">
+                        <h3 class="error">The requested video could not retrieved.</h3>
+                        <p>Please try again later or try a different url.</p>
+                    </div>
 				</div>
 			</section>
 

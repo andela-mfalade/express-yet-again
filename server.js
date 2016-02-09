@@ -16,20 +16,10 @@ app.use(cors());
 app.use(express.static(base));
 app.use(morgan('dev'));
 
-app.get('/', function (req, res) {
-    res.sendFile('index.html', { root: base });
-});
-
-app.get('/admin', function (req, res) {
-    res.render('index', {
-        superAdmin: { 'email': 'admin@app.com', 'password': 'admin' }
-    });
-});
-
-app.get('/getAudioFile/:url', function (req, res) {
-    console.log(req.params.url, "This is the requrest body");
-    res.send("Okay, we got you...");
-});
+var indexRouter = require('./routes/index');
+var downloadRouter = require('./routes/download');
+app.use('/', indexRouter);
+app.use('/download/', downloadRouter);
 
 app.listen(port, function () {
     return console.log("listening on port: ", port);
