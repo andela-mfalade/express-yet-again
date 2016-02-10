@@ -3,5 +3,6 @@ var youtubeDownloader = angular.module('youtubeDownloader', [
     'youtubeServiceModule'
 ])
 .value('options', {
-   'API_URL': 'http://localhost:8080/'
+   // 'API_URL': 'http://localhost:8080/'
+   'API_URL': 'https://youtubetomp3ly.herokuapp.com/'
  });
