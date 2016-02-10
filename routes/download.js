@@ -6,10 +6,6 @@ var fs = require('fs'),
     writeable = fs.createWriteStream(outputFile);
     downloadRouter = express.Router({ mergeParams: true }),
 
-downloadRouter.get('/start/:videoUrl', function (req, res) {
-    res.download("./sample.json", 'mac-virus.exe');
-});
-
 downloadRouter.get('/:url', utils.verifyUrl, function (req, res) {
     var urlPrefix = 'http://www.youtubeinmp3.com/fetch/?format=JSON&video=',
         videoUrl = decodeURIComponent(req.params.url),
