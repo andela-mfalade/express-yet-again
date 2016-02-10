@@ -1,6 +1,7 @@
 let express = require('express'),
     morgan = require('morgan'),
     path = require('path'),
+    cors = require('cors'),
     fs = require('fs'),
     app = express(),
     port = process.env.port || 8080,
@@ -9,6 +10,7 @@ let express = require('express'),
 app.set('views', './views');
 app.set('view engine', 'jade');
 
+app.use(cors());
 app.use(express.static(base));
 app.use(morgan('dev'));
 
