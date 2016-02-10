@@ -6,6 +6,7 @@
   "scripts": {
     "babel": "babel --presets es2015 build/serverBuild.js -o server.js",
     "start": "node server",
+    "postinstall": "bower install",
     "dev": "nodemon server"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "express": "^4.13.4",
     "lodash": "^4.2.1",
     "morgan": "^1.6.1",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "bower": "1.6.5"
   }
 }
