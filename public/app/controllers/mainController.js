@@ -10,18 +10,20 @@ angular.module('youtubeAppModule', ['youtubeServiceModule'])
         $scope.resetValuesExcept();
         $scope.convertUrl = function () {
             if($scope.youtubeUrl) {
-                youtubeService.extractAudioFromUrl($scope.youtubeUrl , function(res) {
+                var videoUrl = encodeURIComponent($scope.youtubeUrl);
+                youtubeService.extractAudioFromUrl(videoUrl , function(res) {
                     response = res.data;
-                    console.log(res.status);
-                    if (res.status === 200) {
+                    console.log(res);
+                    if (res.status === 200 && res.data && res.data.title) {
                         $scope.downloadReady = true;
                         $scope.resetValuesExcept('downloadReady');
+                        $scope.videoInfo = res.data;
                     }
                     else if (res.status === 403) {
                         $scope.resetValuesExcept('obseneUrl');
                         $scope.feedback = response.text;
                     }
-                    else if (res.status === 404) {
+                    else {
                         $scope.resetValuesExcept('notFound');
                     }
                 });

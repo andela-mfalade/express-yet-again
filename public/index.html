@@ -46,17 +46,22 @@
                     </div>
 
                     <div class="downloadSection" ng-if="downloadReady">
-                        <a href="/download/start/test" target="_self">Download Video</a>
+                        <div class="vidInfo">
+                            <h4>Title: {{ videoInfo.title }}</h4>
+                            <p>Duration: {{ videoInfo.length / 60 | number: 2 }}</p>
+                        </div><br /><br />
+                        <a href="{{ videoInfo.link }}" target="_self">Download Video</a><br /><br />
+                        <h5><a href="/">Try Another</a></h5>
                     </div>
 
-                    <div class="downloadSection" ng-if="obseneUrl">
-                        <h3 class="error">{{ feedback }}</h3>
-                        <p>Please visit other sites for this.</p>
+                    <div class="errorMessage" ng-if="obseneUrl">
+                        <p class="error">{{ feedback }}</p>
+                        <p>Please look elsewhere.</p>
                     </div>
 
-                    <div class="downloadSection" ng-if="notFound">
-                        <h3 class="error">The requested video could not retrieved.</h3>
-                        <p>Please try again later or try a different url.</p>
+                    <div class="errorMessage" ng-if="notFound">
+                        <h4 class="error">Thank you, but the requested video could not retrieved.</h4>
+                        <p>Please try again later or try a <a href="/"> different url. </a></p>
                     </div>
 				</div>
 			</section>

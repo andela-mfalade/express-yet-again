@@ -1,10 +1,10 @@
 var utils = {
     verifyUrl: function (req, res, next) {
-        var videoUrl = req.params.url;
+        var videoUrl = decodeURIComponent(req.params.url);
         if(/^xxx|xxx$/.test(videoUrl)) {
             var response = {
                 'status_code': 403,
-                'text': 'Sorry, you cannot download porn videos here.'
+                'text': 'Errrm, that looks like a porn vidoe url. Sorry, you cannot download such videos here.'
             };
             res.status(403).send(response)
         }

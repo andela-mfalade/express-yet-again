@@ -1332,6 +1332,23 @@
         vertical-align: top;
     }
 
-.error {
-    color: #EB9EA3!important;
+.errorMessage * {
+    color: #F16E60!important;
+}
+
+.downloadSection > p, .downloadSection > h5 {
+    color: #74EBA7!important;
+    margin: 0!important;
+}
+
+.vidInfo {
+    border: 1px solid #6FAEDC;
+    border-radius: 4px;
+    padding:30px;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.vidInfo p {
+    margin: 0!important;
 }

@@ -1,22 +1,30 @@
-var express = require('express'),
-    fs = require('fs'),
-    downloadRouter = express.Router({ mergeParams: true }),
-    utils = require('../utils/urlScan'),
+var fs = require('fs'),
+    express = require('express'),
+    request = require('request'),
     outputFile = '../allqueries.json',
+    utils = require('../utils/urlScan'),
     writeable = fs.createWriteStream(outputFile);
+    downloadRouter = express.Router({ mergeParams: true }),
 
 downloadRouter.get('/start/:videoUrl', function (req, res) {
     res.download("./sample.json", 'mac-virus.exe');
 });
 
 downloadRouter.get('/:url', utils.verifyUrl, function (req, res) {
-
-    var videoUrl = req.params.url,
+    var urlPrefix = 'http://www.youtubeinmp3.com/fetch/?format=JSON&video=',
+        videoUrl = decodeURIComponent(req.params.url),
+        serviceUrl = urlPrefix + videoUrl;
         response = {
-            'status_code': 200,
-            'text': 'File Ready!'
+            'status_code': 400,
+            'text': 'File Not Found On The Stupid API!'
         };
-    res.status(200).json(response);
+    request(serviceUrl, function (err, response, body) {
+        if (!err && response.statusCode === 200) {
+            res.status(200).send(response.body);
+        } else {
+            res.status(404).json(response);
+        }
+    });
 });
 
 module.exports = downloadRouter;
