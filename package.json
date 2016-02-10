@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "babel": "babel --presets es2015 build/serverBuild.js -w -o server.js",
+    "babel": "babel --presets es2015 build/serverBuild.js -o server.js",
     "start": "node server",
     "dev": "nodemon server"
   },

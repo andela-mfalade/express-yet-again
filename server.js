@@ -6,7 +6,7 @@ var express = require('express'),
     cors = require('cors'),
     fs = require('fs'),
     app = express(),
-    port = 8080,
+    port = process.env.port || 8080,
     base = __dirname + '/public';
 
 app.set('views', './views');
