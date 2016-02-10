@@ -2,7 +2,7 @@ var fs = require('fs'),
     express = require('express'),
     request = require('request'),
     utils = require('../utils/urlScan'),
-    downloadRouter = express.Router({ mergeParams: true }),
+    downloadRouter = express.Router({ mergeParams: true });
 
 downloadRouter.get('/:url', utils.verifyUrl, function (req, res) {
     var urlPrefix = 'http://www.youtubeinmp3.com/fetch/?format=JSON&video=',
