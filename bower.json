@@ -1,6 +1,6 @@
 {
   "name": "express-yet-again",
-  "main": "index.js",
+  "main": "server.js",
   "version": "0.0.0",
   "homepage": "https://github.com/andela-mfalade/express-yet-again",
   "authors": [
