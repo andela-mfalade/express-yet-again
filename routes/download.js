@@ -1,9 +1,7 @@
 var fs = require('fs'),
     express = require('express'),
     request = require('request'),
-    outputFile = '../allqueries.json',
     utils = require('../utils/urlScan'),
-    writeable = fs.createWriteStream(outputFile);
     downloadRouter = express.Router({ mergeParams: true }),
 
 downloadRouter.get('/:url', utils.verifyUrl, function (req, res) {
