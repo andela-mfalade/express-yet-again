@@ -13,7 +13,6 @@ angular.module('youtubeAppModule', ['youtubeServiceModule'])
                 var videoUrl = encodeURIComponent($scope.youtubeUrl);
                 youtubeService.extractAudioFromUrl(videoUrl , function(res) {
                     response = res.data;
-                    console.log(res);
                     if (res.status === 200 && res.data && res.data.title) {
                         $scope.downloadReady = true;
                         $scope.resetValuesExcept('downloadReady');
