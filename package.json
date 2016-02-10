@@ -2,7 +2,7 @@
   "name": "express-yet-again",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "babel": "babel --presets es2015 build/serverBuild.js -o server.js",
     "start": "node server",
