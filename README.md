@@ -8,3 +8,14 @@ babel.
 ### Purpose
 To get a hang of the es6 syntax and shipped in functionalities. I hope this meets
 my expectations.
+
+
+### Outcome.
+So I decided to convert this to a simple app with which you can download Youtube
+videos in Mp3 format.
+
+I made use of the youtubeinmp3.com api to achieve this.
+
+You can view this app on [youtubetomp3ly.herokuapp.com](youtubetomp3ly.herokuapp.com)
+
+Cheers!
