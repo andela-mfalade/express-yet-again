@@ -4,7 +4,8 @@
         <title>YoutubeToMp3 Converter</title>
         <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+        <link rel="stylesheet" href="assets/css/style.css" />
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="app/controllers/app.js"></script>
@@ -13,69 +14,68 @@
         <script src="app/services/youtubeService.js"></script>
     </head>
     <body ng-controller="youtubeAppController">
-        <section id="sidebar">
-			<div class="inner">
-                <div id="logo">
-                    <a href="/"><img src="assets/images/mp3logo1.png" alt="mp3 logo" /></a>
-                </div>
-				<nav>
-					<ul>
-						<li><a href="">Welcome</a></li>
-						<li><a href="">Who am I?</a></li>
-						<li><a href="">Get in touch</a></li>
-					</ul>
-				</nav>
-			</div>
-        </section>
-        <div id="wrapper">
-			<section id="intro" class="wrapper style3 fullscreen fade-up">
-				<div class="inner">
-					<h1>Youtube to Mp3 Converter</h1>
-					<p>
-                        Easily convert your youtube videos to mp3 format.
-                    </p>
-                    <p>
-                        Quick Easy download.
-                    </p>
-                    <div ng-show="downloadReady == false">
-                        <form ng-submit="convertUrl()">
-                            <input type="text" placeholder="Enter video url here." class="scrolly" ng-model="youtubeUrl"/><br  />
-                            <input type="button" ng-click="convertUrl()" value="CONVERT VIDEO"/><br />
-                        </form>
+        <div class="wrapper fullscreen">
+            <section id="sidebar" class="alt">
+    			<div class="header" id="header">
+                    <div id="logo">
+                        <a href="/"><img src="assets/images/mp3logo1.png" alt="mp3 logo" /></a>
                     </div>
+    				<nav>
+    					<ul>
+    						<li><a href="">Welcome</a></li>
+    						<li><a href="">Who am I?</a></li>
+    						<li><a href="">Get in touch</a></li>
+    					</ul>
+    				</nav>
+    			</div>
+            </section>
+            <div id="">
+    			<section id="intro" class="style3 fade-up">
+    				<div class="">
+    					<h1>Youtube to Mp3 Converter</h1>
+    					<p>
+                            Easily convert your youtube videos to mp3 format.
+                        </p>
+                        <p>
+                            Quick Easy download.
+                        </p>
+                        <div ng-show="downloadReady == false">
+                            <form ng-submit="convertUrl()">
+                                <input type="text" placeholder="Enter video url here." class="scrolly" ng-model="youtubeUrl"/><br  />
+                                <input type="button" ng-click="convertUrl()" class="" value="CONVERT VIDEO"/><br />
+                            </form>
+                        </div>
 
-                    <div class="downloadSection" ng-if="downloadReady">
-                        <div class="vidInfo">
-                            <h4>Title: {{ videoInfo.title }}</h4>
-                            <p>Duration: {{ videoInfo.length / 60 | number: 2 }}</p>
-                        </div><br /><br />
-                        <a href="{{ videoInfo.link }}" target="_self">Download Video</a><br /><br />
-                        <h5><a href="/">Try Another</a></h5>
-                    </div>
+                        <div class="downloadSection" ng-if="downloadReady">
+                            <div class="vidInfo">
+                                <h4>Title: {{ videoInfo.title }}</h4>
+                                <p>Duration: {{ videoInfo.length / 60 | number: 2 }}</p>
+                            </div><br /><br />
+                            <a href="{{ videoInfo.link }}" target="_self">Download Video</a><br /><br />
+                            <h5><a href="/">Try Another</a></h5>
+                        </div>
 
-                    <div class="errorMessage" ng-if="obseneUrl">
-                        <p class="error">{{ feedback }}</p>
-                        <p>Please look elsewhere.</p>
-                    </div>
+                        <div class="errorMessage" ng-if="obseneUrl">
+                            <p class="error">{{ feedback }}</p>
+                            <p>Please look elsewhere.</p>
+                        </div>
 
-                    <div class="errorMessage" ng-if="notFound">
-                        <h4 class="error">Thank you, but the requested video could not retrieved.</h4>
-                        <p>Please try again later or try a <a href="/"> different url. </a></p>
-                    </div>
-				</div>
-			</section>
+                        <div class="errorMessage" ng-if="notFound">
+                            <h4 class="error">The requested video could not retrieved.</h4>
+                            <p>Please try again later or try <a href="/">a different url. </a></p>
+                        </div>
+    				</div>
+    			</section>
 
-		</div>
+    		</div>
 
-
-		<footer id="footer" class="wrapper style1-alt">
-			<div class="inner cred">
-				<ul class="menu">
-					<li>Made with
-                        <img src="assets/images/hearticon.png" alt="heart icon" /> by
+        </div>
+		<footer>
+			<div id="footer-content">
+					<p>Made with
+                        <img src="assets/images/hearticon.png" alt="heart icon" class="heart-icon"/> by
                         <a href="http://facebook.com/falade.mayor">Mayor</a>
-                    </li>
-				</ul>
+                    </p>
 			</div>
 		</footer>
     </body>
