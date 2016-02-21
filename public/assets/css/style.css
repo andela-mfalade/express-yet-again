@@ -60,7 +60,7 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 body, input, select, textarea {
     color: rgba(255, 255, 255, 0.55);
     font-family: pp-sans-big-light,Helvetica Neue,Arial,sans-serif;
-    font-size: 15pt;
+    font-size: 13pt;
     font-weight: 300;
     line-height: 1.75;
 }
@@ -585,12 +585,15 @@ body.is-ie .wrapper.fullscreen {
     margin: 0!important;
 }
 
+.inner {
+    padding: 50px 20px
+}
 
 footer {
     background: #f7f7f7;
     text-align: center;
     color: #888888;
-    font-size: 11px;
+    font-size: 12px;
     width: 100%;
     height: 60px;
     display: flex;
@@ -601,7 +604,7 @@ footer {
 
 footer p, footer p a {
     margin: 0;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 #footer-content {
