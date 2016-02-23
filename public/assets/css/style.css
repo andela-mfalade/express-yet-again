@@ -593,7 +593,7 @@ body.is-ie .wrapper.fullscreen {
 }
 
 .inner {
-    padding: 50px 0
+    padding: 0 70px;
 }
 
 footer {
