@@ -51,8 +51,7 @@
                                 <h4>Title: {{ videoInfo.title }}</h4>
                                 <p>Duration: {{ videoInfo.length / 60 | number: 2 }}</p>
                             </div><br /><br />
-                            <input type="button" class="" value="Download Audio"/><br />
-                           <h5><a href="{{ videoInfo.link }}" target="_self">Download Audio</a></h5><br /><br />
+                            <a href="{{ videoInfo.link }}" target="_self"><input type="button" class="" value="Download Mp3 File"/></a><br />
                             <p><a href="/">Try Another</a></p>
                         </div>
 
@@ -62,8 +61,8 @@
                         </div>
 
                         <div class="errorMessage" ng-if="notFound">
-                            <h4 class="error">The requested video could not retrieved.</h4>
-                            <p>Please try again later or try <a href="/">a different url. </a></p>
+                            <h4 class="error">The requested video could not be processed by our servers.</h4>
+                            <p>Please try again later or try<a href="/">a different url. </a></p>
                         </div>
     				</div>
     			</section>

@@ -5,10 +5,13 @@ angular.module('youtubeAppModule', ['youtubeServiceModule'])
             $scope.processingRequest = false;
             $scope.notFound = false;
             $scope.obseneUrl = false;
-            $scope[param] = true;
+            if (param) {
+                $scope[param] = true;
+            }
         };
-        $scope.resetValuesExcept();
+        $scope.resetValuesExcept(false);
         $scope.convertUrl = function () {
+            $scope.resetValuesExcept(false);
             if($scope.youtubeUrl) {
                 var videoUrl = encodeURIComponent($scope.youtubeUrl);
                 youtubeService.extractAudioFromUrl(videoUrl , function(res) {

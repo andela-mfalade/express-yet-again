@@ -17,7 +17,7 @@ ol, ul {
 
 body {
     -webkit-text-size-adjust: none;
-    max-height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     -ms-overflow-style: scrollbar;
@@ -422,7 +422,7 @@ select {
     -webkit-justify-content: center;
     -ms-justify-content: center;
     justify-content: center;
-    max-height: 100vh;
+    min-height: 100vh;
 }
 
 body.is-ie .wrapper.fullscreen {
@@ -432,11 +432,11 @@ body.is-ie .wrapper.fullscreen {
 @media screen and (max-width: 1280px) {
 
     .wrapper.fullscreen {
-        height: 100vh;
+        min-height: 100vh;
     }
 
         body.is-ie .wrapper.fullscreen {
-            height: 100vh;
+            min-height: 100vh;
         }
 
 }
@@ -530,7 +530,7 @@ body.is-ie .wrapper.fullscreen {
 }
 
 #mid-section {
-    height: 75vh;
+    min-height: 75vh;
 }
 
 #intro {
