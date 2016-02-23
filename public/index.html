@@ -29,7 +29,7 @@
     				</nav>
     			</div>
             </section>
-            <div id="">
+            <div id="mid-section">
     			<section id="intro" class="style3 fade-up">
     				<div class="inner">
     					<h1>Youtube to Mp3 Converter</h1>
@@ -51,8 +51,9 @@
                                 <h4>Title: {{ videoInfo.title }}</h4>
                                 <p>Duration: {{ videoInfo.length / 60 | number: 2 }}</p>
                             </div><br /><br />
-                            <a href="{{ videoInfo.link }}" target="_self">Download Video</a><br /><br />
-                            <h5><a href="/">Try Another</a></h5>
+                            <input type="button" class="" value="Download Audio"/><br />
+                           <h5><a href="{{ videoInfo.link }}" target="_self">Download Audio</a></h5><br /><br />
+                            <p><a href="/">Try Another</a></p>
                         </div>
 
                         <div class="errorMessage" ng-if="obseneUrl">
@@ -69,14 +70,14 @@
 
     		</div>
 
+    		<footer>
+    			<div id="footer-content">
+    					<p>Made with
+                            <img src="assets/images/hearticon.png" alt="heart icon" class="heart-icon"/> by
+                            <a href="http://facebook.com/falade.mayor">Mayor</a>
+                        </p>
+    			</div>
+    		</footer>
         </div>
-		<footer>
-			<div id="footer-content">
-					<p>Made with
-                        <img src="assets/images/hearticon.png" alt="heart icon" class="heart-icon"/> by
-                        <a href="http://facebook.com/falade.mayor">Mayor</a>
-                    </p>
-			</div>
-		</footer>
     </body>
 </html>
