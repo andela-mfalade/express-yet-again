@@ -23,6 +23,15 @@ body {
     -ms-overflow-style: scrollbar;
 }
 
+#download-button {
+    border: none!important;
+    font-size: 15px;
+}
+
+.no-styling {
+    border: none;
+}
+
 #logo {
     align-self: center;
 }
