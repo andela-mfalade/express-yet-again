@@ -12,10 +12,12 @@
   "author": "Falade Ayodeji Mayowa",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "cors": "^2.7.1",
     "express": "^4.13.4",
     "firebase": "^2.4.0",
     "lodash": "^4.2.1",
+    "method-override": "^2.3.5",
     "morgan": "^1.6.1",
     "request": "^2.69.0"
   }
