@@ -1,0 +1,27 @@
+.container {
+    display: inline-block;
+    min-width: 300px;
+}
+
+.col-6 {
+    width: 50%;
+    float: left;
+}
+
+.social_links p {
+    float: left;
+    color: rgba(34, 131, 201, 0.84);
+}
+
+.social_links p a {
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.social_links p:hover {
+    color: rgba(34, 131, 201, 0.62)
+}
+
+#author {
+    padding-top: 8px;
+}
