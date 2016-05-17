@@ -5,7 +5,6 @@ var fs = require('fs'),
 
 var vidUtils = { downloadVid: downloadVid };
 
-
 function downloadVid(req, res) {
     var vidUrl = req.body.videoUrl,
         videoUrl = decodeURIComponent(vidUrl);
@@ -21,7 +20,6 @@ function downloadVid(req, res) {
         console.log('filename: ' + info._filename);
         console.log('size: ' + info.size);
     });
-
 
     proc = new ffmpeg({source:video})
     proc.saveToFile('vid.mp3', function (stdout, stderr) {

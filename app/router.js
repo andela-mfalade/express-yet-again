@@ -10,14 +10,14 @@ function routerConfig() {
     apiRouter.use(urlScanner);
 
     apiRouter.route('/favicon.ico')
-        .get(resonseUtils.endRequest);
+        .get(resonseUtils.endRequest)
+        .post(resonseUtils.endRequest);
 
     apiRouter.route('/download')
-        // .post(vidUtils.downloadVid);
-        .post(vidUtils2.downloadVid);
+        .post(vidUtils.downloadVid);
+        // .post(vidUtils2.downloadVid);
 
     return apiRouter;
 };
-
 
 module.exports = routerConfig();
