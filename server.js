@@ -8,7 +8,7 @@ var express = require('express'),
     fs = require('fs'),
     app = express(),
     port = process.env.PORT || 5000,
-    base = __dirname + '/public';
+    public_dir = __dirname + '/public';
 
 app.set('views', './views');
 app.set('view engine', 'jade');
@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(base));
+app.use(express.static(public_dir));
 app.use(morgan('dev'));
 
 var router = require(process.cwd() + '/app/router');
