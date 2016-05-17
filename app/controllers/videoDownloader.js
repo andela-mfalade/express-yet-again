@@ -5,6 +5,7 @@ var vidUtils = { downloadVid: downloadVid };
 
 
 function downloadVid(req, res) {
+    console.log(req.body)
     var urlPrefix = 'http://www.youtubeinmp3.com/fetch/?format=JSON&video=',
         vidUrl = req.body.videoUrl,
         videoUrl = decodeURIComponent(vidUrl),
