@@ -5,7 +5,7 @@ function urlScanner(req, res, next) {
     if(/^xxx|xxx$/.test(videoUrl)) {
         var response = {
             'status_code': 403,
-            'text': 'Errrm, that looks like an indecent vidoe url. Sorry, you cannot download such videos here.'
+            'text': 'That Url is Forbidden.'
         };
         res.status(403).send(response)
     }
