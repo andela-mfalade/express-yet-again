@@ -7,6 +7,8 @@ angular.module('youtubeServiceModule', [])
                 $http.post(apiUrl, payload)
                     .then(
                         function (response) {
+                            console.log(payload)
+                            console.log(response)
                             callback(response);
                         },
                         function errorCallBack(error) {
