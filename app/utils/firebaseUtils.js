@@ -1,4 +1,4 @@
-var Firebase = require("firebase"),
+=var Firebase = require("firebase"),
     myFirebaseRef = new Firebase("https://youtubetomp3.firebaseio.com/");
 
 var firebaseUtils = { postContent: postContent };
