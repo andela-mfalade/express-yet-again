@@ -1,10 +1,9 @@
-var Firebase = require("firebase"),
-    myFirebaseRef = new Firebase("https://youtubetomp3.firebaseio.com/");
+var Firebase       = require( "firebase" ),
+    myFirebaseRef  = new Firebase( "https://youtubetomp3.firebaseio.com/" ),
+    firebaseUtils  = { postContent: postContent };
 
-var firebaseUtils = { postContent: postContent };
-
-function postContent(payload) {
-    myFirebaseRef.push(payload);
+function postContent( payload ) {
+    myFirebaseRef.push( payload );
 }
 
 module.exports = firebaseUtils;

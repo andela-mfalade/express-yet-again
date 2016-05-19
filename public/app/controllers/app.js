@@ -1,7 +1,7 @@
-var youtubeDownloader = angular.module('youtubeDownloader', [
+var youtubeDownloader = angular.module( 'youtubeDownloader', [
     'youtubeAppModule',
     'youtubeServiceModule'
-])
-.value('options', {
+] )
+.value( 'options', {
    'API_URL': 'https://youtubetomp3ly.herokuapp.com/api/v1'
- });
+ } );
