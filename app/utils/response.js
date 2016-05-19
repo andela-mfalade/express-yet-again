@@ -1,6 +1,6 @@
+'use strict';
 var responseUtils = { endRequest: endRequest };
-
-function endRequest(req, res) {
+function endRequest( req, res ) {
     res.end();
 }
 
