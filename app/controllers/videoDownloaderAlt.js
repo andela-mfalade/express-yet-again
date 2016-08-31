@@ -1,8 +1,9 @@
-var fs             = require( 'fs' ),
-    ffmpeg         = require( 'fluent-ffmpeg' ),
-    youtubedl      = require( 'youtube-dl' ),
-    firebaseUtils  = require( process.cwd() + '/app/utils/firebaseUtils' ),
-    vidUtils       = { downloadVid: downloadVid };
+//-  This is an alternative to the videoDownloader Module.
+//- Trying out different approaches. Not functional yet
+
+var ffmpeg    = require( 'fluent-ffmpeg' ),
+    youtubedl = require( 'youtube-dl' ),
+    vidUtils  = { downloadVid: downloadVid };
 
 function downloadVid( req, res ) {
     var vidUrl   = req.body.videoUrl,
@@ -19,11 +20,11 @@ function downloadVid( req, res ) {
         console.log( 'size: ' + info.size );
     } );
 
-    proc = new ffmpeg( { source:video } )
+    var proc = new ffmpeg( { source:video } );
     proc.saveToFile( 'vid.mp3', function ( stdout, stderr ) {
         console.log( stderr, "stderr" );
         console.log( stdout, "stdout" );
-    } )
+    } );
 }
 
 module.exports = vidUtils;
