@@ -2,8 +2,6 @@ function urlScanner( req, res, next ) {
     var vidUrl    = req.body.videoUrl,
         videoUrl  = decodeURIComponent( vidUrl );
 
-    console.log(videoUrl, 'this is the Url');
-
     if( /^xxx|xxx$/.test( videoUrl ) ) {
         var response = {
             'status_code': 403,

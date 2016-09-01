@@ -18,7 +18,7 @@ ol, ul {
 body {
     -webkit-text-size-adjust: none;
     min-height: 100vh;
-    display: flex;
+    display: inline;
     justify-content: center;
     -ms-overflow-style: scrollbar;
 }
@@ -109,7 +109,7 @@ a:hover {
 }
 
 p {
-    margin: 0 0 2em 0;
+    margin: 0 0 1.5em 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -419,14 +419,14 @@ select {
 }
 
 .wrapper.fullscreen {
-    display: -moz-flex;
+    /*display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
     -moz-flex-direction: column;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    flex-direction: column;
+    flex-direction: column;*/
     -moz-justify-content: center;
     -webkit-justify-content: center;
     -ms-justify-content: center;
@@ -441,7 +441,7 @@ body.is-ie .wrapper.fullscreen {
 @media screen and (max-width: 1280px) {
 
     .wrapper.fullscreen {
-        min-height: 100vh;
+        min-height: 86vh;
     }
 
         body.is-ie .wrapper.fullscreen {
@@ -470,7 +470,7 @@ body.is-ie .wrapper.fullscreen {
     display: flex;
     cursor: default;
     padding: 0 5em;
-    height: 25vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
 }
@@ -538,10 +538,6 @@ body.is-ie .wrapper.fullscreen {
 
 }
 
-#mid-section {
-    min-height: 75vh;
-}
-
 #intro {
     text-align: center;
 }
@@ -592,9 +588,11 @@ body.is-ie .wrapper.fullscreen {
 .vidInfo {
     border: 1px solid #6FAEDC;
     border-radius: 4px;
-    padding:30px;
+    padding:20px;
+    text-align: left;
     margin: 0 auto;
     max-width: 700px;
+    min-height: 200px;
 }
 
 .vidInfo p {
@@ -603,20 +601,20 @@ body.is-ie .wrapper.fullscreen {
 
 .inner {
     padding: 0 70px;
+    margin-top: 50px;
 }
 
 footer {
-    background: #f7f7f7;
-    text-align: center;
-    color: #888888;
-    font-size: 12px;
-    width: 100%;
-    height: 10vh;
-    top: 90%;
-    display: flex;
-    justify-content: center;
-    position: absolute;;
-    bottom: 0;
+  background: #f7f7f7;
+  text-align: center;
+  color: #888888;
+  font-size: 12px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  position: relative;;
+  bottom: 0;
 }
 
 footer p, footer p a {
@@ -625,8 +623,33 @@ footer p, footer p a {
 }
 
 #footer-content {
-    align-self: center;
+  align-self: center;
+  width: 30%;
 }
 .heart-icon {
-    width: 22px;
+  width: 22px;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+.thumbnail {
+  max-width: 200px;
+  height: auto;
+  float: left
+}
+
+.thumbnail img {
+  width: 100%;
+}
+
+.vidTitle {
+  padding-left: 20px;
+  word-wrap: break-word;
+}
+
+.clearFloat {
+  float: none;
+  clear:both;
 }
