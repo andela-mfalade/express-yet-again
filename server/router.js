@@ -9,11 +9,6 @@ var apiRouter = express.Router( { mergeParams: true } );
 apiRouter
   .use( urlScanner );
 
-// apiRouter
-//   .route( '/favicon.ico' )
-//     .get( resonseUtils.endRequest )
-//     .post( resonseUtils.endRequest );
-
 apiRouter
   .route( '/info' )
     .post( vidCtrl.getVideoInfo );
