@@ -2,14 +2,12 @@
 
 var express     = require( 'express' ),
     morgan      = require( 'morgan' ),
-    path        = require( 'path' ),
     bodyParser  = require( 'body-parser' ),
     cors        = require( 'cors' ),
-    fs          = require( 'fs' ),
     app         = express(),
     port        = process.env.PORT || 5000,
     public_dir  = __dirname + '/public',
-    router      = require( process.cwd() + '/app/router' );
+    router      = require( process.cwd() + '/server/router' );
 
 app.set( 'views', './views' );
 app.set( 'view engine', 'jade' );

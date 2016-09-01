@@ -1,9 +1,9 @@
 //-  This is an alternative to the videoDownloader Module.
 //- Trying out different approaches. Not functional yet
 
-var ffmpeg    = require( 'fluent-ffmpeg' ),
-    youtubedl = require( 'youtube-dl' ),
-    vidUtils  = { downloadVid: downloadVid };
+// var ffmpeg    = require( 'fluent-ffmpeg' );
+var youtubedl = require( 'youtube-dl' );
+var vidUtils  = { downloadVid: downloadVid };
 
 function downloadVid( req, res ) {
     var vidUrl   = req.body.videoUrl,
