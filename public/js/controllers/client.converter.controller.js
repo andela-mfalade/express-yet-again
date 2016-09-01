@@ -4,7 +4,7 @@ angular
 
   function youtubeAppController(youtubeDownloadService) {
     var vm = this;
-    
+
     vm.resetValuesExcept = function( param ) {
       vm.downloadReady     = false;
       vm.processingRequest = false;
@@ -17,12 +17,20 @@ angular
 
     vm.resetValuesExcept(0);
 
+    vm.getVideoInfo = function() {
+      youtubeDownloadService.getVideoInfo( vm.videoUrl ).then( function(res) {
+        console.log(res.data);
+        vm.videoInfo = res.data;
+      })
+    }
+
     vm.convertUrl = function () {
       vm.resetValuesExcept( 0 );
       if( vm.youtubeUrl ) {
         var videoUrl = encodeURIComponent( vm.youtubeUrl );
         youtubeDownloadService.convert( videoUrl ).then( function( res ) {
           response = res.data;
+          console.log(res, 'response..');
           if ( res.status === 200 && res.data && res.data.title ) {
             vm.downloadReady = true;
             vm.resetValuesExcept( 'downloadReady' );

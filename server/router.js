@@ -15,8 +15,13 @@ apiRouter
 //     .post( resonseUtils.endRequest );
 
 apiRouter
+  .route( '/info' )
+    .post( vidCtrl.getVideoInfo );
+
+
+apiRouter
   .route( '/convert' )
-    .post( vidCtrl.downloadVid );
+    .post( vidCtrl.getVideoInfo );
 
 
 module.exports = apiRouter;

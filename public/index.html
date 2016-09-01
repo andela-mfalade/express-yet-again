@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/vendors/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/c73d9d3e99.js"></script>
 </head>
 
 <body ng-controller="youtubeAppController as vm">
@@ -19,36 +19,38 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
                         <li><a href="https://ng.linkedin.com/in/falademayowa" target="_blank">Who am I?</a></li>
                         <li><a href="">Get in touch</a></li>
                     </ul>
                 </nav>
             </div>
         </section>
-        <div id="mid-section">
+        <div>
             <section id="intro" class="style3 fade-up">
                 <div class="inner">
                     <h1>Youtube to Mp3 Converter</h1>
-                    <p>
-                        Easily convert your youtube videos to mp3 format.
-                    </p>
-                    <p>
-                        Quick Easy download.
-                    </p>
-                    <div ng-show="vm.downloadReady == false">
+                    <p>Quick Easy download.</p>
+                    <div ng-show="!vm.videoInfo">
                         <form ng-submit="vm.convertUrl()">
-                            <input type="text" placeholder="Enter video url here." class="scrolly" ng-model="vm.youtubeUrl" />
+                            <input type="text" placeholder="Enter video url here." class="scrolly" ng-model="vm.videoUrl" />
                             <br />
-                            <input type="button" ng-click="vm.convertUrl()" class="" value="CONVERT VIDEO" />
+                            <input type="button" ng-click="vm.getVideoInfo()" class="" value="CONVERT VIDEO" />
                             <br />
                         </form>
                     </div>
                     <div class="" ng-cloak>
-                      <div class="downloadSection" ng-if="vm.downloadReady" ng-cloak>
+                      <div class="downloadSection" ng-if="vm.videoInfo" ng-cloak>
                         <div class="vidInfo" ng-cloak>
-                          <h4>Title: {{ vm.videoInfo.title }}</h4>
-                          <p>Duration: {{ vm.videoInfo.length / 60 | number: 2 }}</p>
+                          <div class="thumbnail">
+                            <img src="{{vm.videoInfo.thumbnail_url}}" alt="" />
+                          </div>
+                          <div class="vidTitle">
+                            <h4><span class="spacing">&nbsp;&nbsp;</span>Title: {{ vm.videoInfo.title }}</h4>
+                            <h4><span class="spacing">&nbsp;&nbsp;</span>Type: {{ vm.videoInfo.type }}</h4>
+                          </div>
+                          <div class="clearFloat">
+                            <p>{{ vm.videoUrl }}</p>
+                          </div>
                         </div>
                         <br />
                         <br />
@@ -57,6 +59,7 @@
                         </a>
                         <br />
                         <p class="no-styling"><a href="/">Try Another</a></p>
+                        <br><br>
                       </div>
                       <div class="errorMessage" ng-if="vm.obseneUrl">
                         <p class="error">{{ vm.feedback }}</p>
@@ -70,24 +73,26 @@
                 </div>
             </section>
         </div>
-        <footer>
-            <div id="footer-content">
-                <div class="container">
-                    <div class="col-6">
-                        <p id="author">Made by <a href="http://facebook.com/falade.mayor">Mayor</a>
-                        </p>
-                    </div>
-                    <div class="col-6 social_links inline_content">
-                        <p><a href="https://github.com/andela-mfalade" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></p>
-                        <p><a href="https://www.facebook.com/falade.mayor" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></p>
-                        <p><a href="https://twitter.com/mayor_glitz" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></p>
-                        <p><a href="https://www.instagram.com/mayor_glitz/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></p>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
+    <footer>
+      <div id="footer-content">
+        <div class="row">
+          <div class="col-6">
+            <p id="author">Made by <a href="http://facebook.com/falade.mayor">Mayor</a>
+            </p>
+          </div>
+          <div class="col-6 social_links inline_content">
+            <p><a href="https://ng.linkedin.com/in/falademayowa" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></p>
+            <p><a href="https://github.com/andela-mfalade" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></p>
+            <p><a href="https://www.facebook.com/falade.mayor" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></p>
+            <p><a href="https://twitter.com/mayor_suave" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></p>
+            <p><a href="https://www.instagram.com/iam.mayor/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
+    <script src="js/vendors/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="application.js"></script>
     <script src="js/controllers/client.converter.controller.js"></script>
